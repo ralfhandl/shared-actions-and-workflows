@@ -11,9 +11,14 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5 # checkout main branch
+      - uses: actions/checkout@v5 # checkout main branch of calling repo
         with:
           fetch-depth: 0
+
+      - uses: actions/checkout@v5 # checkout main branch of reuse repo as folder
+        with:
+          repository: ralfhandl/shared-actions-and-workflows
+          path: shared
           
       - name: say hello
         id: hello
@@ -21,9 +26,16 @@ jobs:
         run: |
           echo "Hello ${{ inputs.who }}"
           ls -l .github/workflows scripts
+          ls -l shared/scripts
 
-      - name: call build.sh
+      - name: call build.sh # call script in calling repo
         id: call
         shell: bash
         run: |
-          scripts//build.sh
+          scripts/build.sh
+
+      - name: call hello.sh # call script in reuse repo
+        id: call
+        shell: bash
+        run: |
+          shared/scripts/hello.sh
