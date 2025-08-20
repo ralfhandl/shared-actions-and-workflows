@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@v5 # checkout main branch of reuse repo as folder
         with:
           repository: ralfhandl/shared-actions-and-workflows
+          ref: main
           path: shared
           
       - name: say hello
