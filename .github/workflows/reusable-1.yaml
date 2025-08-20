@@ -40,4 +40,4 @@ jobs:
       - name: call hello.sh # call script in reuse repo
         shell: bash
         run: |
-          shared/scripts/hello.sh
+          shared/scripts/hello.sh  ${{ inputs.who }}
