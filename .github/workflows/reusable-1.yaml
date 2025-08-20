@@ -20,4 +20,10 @@ jobs:
         shell: bash
         run: |
           echo "Hello ${{ inputs.who }}"
-          ls -l .github/workflows
+          ls -l .github/workflows scripts
+
+      - name: call build.sh
+        id: call
+        shell: bash
+        run: |
+          scripts//build.sh
