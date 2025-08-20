@@ -11,8 +11,13 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-    - name: say hello
-      id: hello
-      shell: bash
-      run: |
-        echo "Hello ${{ inputs.who }}"
+      - uses: actions/checkout@v5 # checkout main branch
+        with:
+          fetch-depth: 0
+          
+      - name: say hello
+        id: hello
+        shell: bash
+        run: |
+          echo "Hello ${{ inputs.who }}"
+          ls -l .github/workflows
