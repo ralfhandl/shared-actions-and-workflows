@@ -26,4 +26,4 @@ jobs:
         id: call
         shell: bash
         run: |
-          bash scripts//build.sh
+          scripts//build.sh
