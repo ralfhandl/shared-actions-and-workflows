@@ -21,7 +21,6 @@ jobs:
           path: shared
           
       - name: say hello
-        id: hello
         shell: bash
         run: |
           echo "Hello ${{ inputs.who }}"
@@ -29,13 +28,11 @@ jobs:
           ls -l shared/scripts
 
       - name: call build.sh # call script in calling repo
-        id: call
         shell: bash
         run: |
           scripts/build.sh
 
       - name: call hello.sh # call script in reuse repo
-        id: call
         shell: bash
         run: |
           shared/scripts/hello.sh
