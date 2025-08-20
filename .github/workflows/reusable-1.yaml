@@ -6,9 +6,9 @@ on:
       who:
         required: true
         type: string
-    secrets:
-      token:
-        required: true
+    # secrets:
+    #   token:
+    #     required: true
 
 jobs:
   greet:
