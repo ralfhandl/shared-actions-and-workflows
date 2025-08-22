@@ -18,20 +18,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/checkout@v5 # checkout main branch of reuse repo as folder
-        with:
-          repository: ralfhandl/shared-actions-and-workflows
-          # token: ${{ secrets.token }}
-          token: ${{ secrets.PRIVATE_REPOS }}
-          ref: main
-          path: shared
-          
+      # - uses: actions/checkout@v5 # checkout main branch of reuse repo as folder
+      #   with:
+      #     repository: ralfhandl/shared-actions-and-workflows
+      #     # token: ${{ secrets.token }}
+      #     token: ${{ secrets.PRIVATE_REPOS }}
+      #     ref: main
+      #     path: shared
+
       - name: say hello
         shell: bash
         run: |
           echo "Hello ${{ inputs.who }}"
           ls -l .github/workflows scripts
-          ls -l shared/scripts
+          # ls -l shared/scripts
 
       - name: call build.sh # call script in calling repo
         shell: bash
@@ -41,4 +41,6 @@ jobs:
       - name: call hello.sh # call script in reuse repo
         shell: bash
         run: |
-          shared/scripts/hello.sh  ${{ inputs.who }}
+          # shared/scripts/hello.sh  ${{ inputs.who }}
+          npm ci
+          npx hello ${{ inputs.who }}
