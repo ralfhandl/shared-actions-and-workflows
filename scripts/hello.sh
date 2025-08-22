@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "shared says: Hello $1"
+echo "shared repo says: Hello $1"
