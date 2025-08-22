@@ -10,8 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/ralfhandl/shared-actions-and-workflows.git"
   },
-  "license": "ISC",
-  "author": "",
   "type": "commonjs",
   "bin": {
     "hello": "scripts/hello.sh"
